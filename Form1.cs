@@ -52,7 +52,7 @@ namespace coursera_capture
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            captureCourseraScreen();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace coursera_capture
             int screenHeight = SystemInformation.VirtualScreen.Height;
 
             //Bitmap 객체 생성   
-            Bitmap bmp = new Bitmap(w, h);
+            Bitmap bmp = new Bitmap(Form1.courseraSize.Width, Form1.courseraSize.Height);
 
             //Graphics 객체 생성   
             Graphics g = Graphics.FromImage(bmp);
