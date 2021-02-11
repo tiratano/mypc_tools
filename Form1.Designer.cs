@@ -35,6 +35,9 @@ namespace coursera_capture
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStartupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeStartupToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,10 +51,11 @@ namespace coursera_capture
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
             this.showToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // showToolStripMenuItem
             // 
@@ -66,6 +70,29 @@ namespace coursera_capture
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStartupToolStripMenuItem1,
+            this.removeStartupToolStripMenuItem1});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // addStartupToolStripMenuItem1
+            // 
+            this.addStartupToolStripMenuItem1.Name = "addStartupToolStripMenuItem1";
+            this.addStartupToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addStartupToolStripMenuItem1.Text = "Add Startup";
+            this.addStartupToolStripMenuItem1.Click += new System.EventHandler(this.addStartupToolStripMenuItem1_Click);
+            // 
+            // removeStartupToolStripMenuItem1
+            // 
+            this.removeStartupToolStripMenuItem1.Name = "removeStartupToolStripMenuItem1";
+            this.removeStartupToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.removeStartupToolStripMenuItem1.Text = "Remove Startup";
+            this.removeStartupToolStripMenuItem1.Click += new System.EventHandler(this.removeStartupToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -87,6 +114,9 @@ namespace coursera_capture
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStartupToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem removeStartupToolStripMenuItem1;
     }
 }
 

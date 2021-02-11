@@ -15,12 +15,14 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace coursera_capture
 {
     public partial class Form1 : Form
     {
         public static Size courseraSize = new Size(940, 585);
+        public static String startupName = "CourseraUtils";
         KeyboardHook hook = new KeyboardHook();
 
         public Form1()
@@ -91,6 +93,44 @@ namespace coursera_capture
             g.CopyFromScreen(screenLeft + 442, screenTop + 225, 0, 0, Form1.courseraSize);
 
             Clipboard.SetImage((Image)bmp);
+        }
+
+        private void addStartupToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 시작프로그램 등록하는 레지스트리
+                string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                RegistryKey strUpKey = Registry.LocalMachine.OpenSubKey(runKey);
+                if (strUpKey.GetValue(startupName) == null)
+                {
+                    strUpKey.Close();
+                    strUpKey = Registry.LocalMachine.OpenSubKey(runKey, true);
+                    // 시작프로그램 등록명과 exe경로를 레지스트리에 등록
+                    strUpKey.SetValue(startupName, Application.ExecutablePath);
+                }
+                MessageBox.Show("Add Startup Success");
+            }
+            catch
+            {
+                MessageBox.Show("Add Startup Fail");
+            }
+        }
+
+        private void removeStartupToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string runKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                RegistryKey strUpKey = Registry.LocalMachine.OpenSubKey(runKey, true);
+                // 레지스트리값 제거
+                strUpKey.DeleteValue(startupName);
+                MessageBox.Show("Remove Startup Success");
+            }
+            catch
+            {
+                MessageBox.Show("Remove Startup Fail");
+            }
         }
     }
 }
