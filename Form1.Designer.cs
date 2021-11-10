@@ -1,5 +1,5 @@
 ﻿
-namespace coursera_capture
+namespace mypc_tools
 {
     partial class Form1
     {

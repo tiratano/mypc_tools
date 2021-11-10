@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Input;
 using System.Windows.Forms;
 
-namespace coursera_capture
+namespace mypc_tools
 {
     // References:
     // https://stackoverflow.com/questions/2450373/set-global-hotkeys-using-c-sharp
